@@ -165,7 +165,12 @@
 
   <script>
   $(document).ready(function() {
-    $(document).foundation();
+    $(document).foundation('section', {
+      callback: function(section) {
+        var pos = section.offset();
+        $("html, body").animate({ scrollTop: pos.top }, 200);
+      }
+    });
 
     // Vimeo API nonsense
     var player = document.getElementById('player_1');
