@@ -45,7 +45,6 @@
 			<hr />
 		</div>
 	</div>
-
 	<div class="row">
 		<div class="large-8 columns">
 			<h3>The Grid</h3>
@@ -68,7 +67,7 @@
                 <img src="http://placekitten.com/800/504" />
               </li>
               <li>
-                <iframe id="player_2" width="420" height="315" src="//www.youtube.com/embed/Ng9THFe4pLY" frameborder="0" allowfullscreen></iframe>
+                <iframe id="player_2" width="420" height="315" src="http://www.youtube.com/embed/vPzT9G-NM5I" frameborder="0" allowfullscreen></iframe>
               </li>
             </ul>
           </div>
@@ -182,7 +181,20 @@
         smoothHeight: true,
         before: function(slider){
           $f(player).api('pause');
+          playVideoAndPauseOthers($('.play3 iframe')[0]);
         }
+    });
+
+    function playVideoAndPauseOthers(frame) {
+      $('iframe').each(function(i) {
+        var func = this === frame ? 'playVideo' : 'stopVideo';
+        this.contentWindow.postMessage('{"event":"command","func":"' + func + '","args":""}', '*');
+      });
+    }
+
+    /* ------------------ PREV & NEXT BUTTON FOR FLEXSLIDER (YOUTUBE) ------------------ */
+    $('.flex-next, .flex-prev').click(function() {
+      playVideoAndPauseOthers($('.play3 iframe')[0]);
     });
   });
   </script>
