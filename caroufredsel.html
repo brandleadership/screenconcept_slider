@@ -54,7 +54,28 @@
 			<!-- Grid Example -->
 			<div class="row">
 				<div class="large-12 columns">
-					VIDEO TEST HERE
+          <ul class="slider">
+            <li>
+              <iframe id="player_1" src="http://player.vimeo.com/video/39683393?api=1&player_id=player_1" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            </li>
+            <li>
+              <img src="http://placekitten.com/800/504" />
+            </li>
+            <li>
+              <img src="http://placekitten.com/800/504" />
+            </li>
+            <li>
+              <img src="http://placekitten.com/800/504" />
+            </li>
+            <li>
+              <img src="http://placekitten.com/800/504" />
+            </li>
+            <li>
+              <iframe id="player_2" width="420" height="315" src="http://www.youtube.com/embed/vPzT9G-NM5I" frameborder="0" allowfullscreen></iframe>
+            </li>
+          </ul>
+          <a class="prev" href="#"><span>prev</span></a>
+          <a class="next" href="#"><span>next</span></a>
 				</div>
 			</div>
 			<div class="row">
@@ -75,7 +96,28 @@
             <section>
               <p class="title" data-section-title><a href="#">Section 1</a></p>
               <div class="content" data-section-content>
-                VIDEO TEST HERE
+                <ul class="slider">
+                  <li>
+                    <iframe id="player_1" src="http://player.vimeo.com/video/39683393?api=1&player_id=player_1" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                  </li>
+                  <li>
+                    <img src="http://placekitten.com/800/504" />
+                  </li>
+                  <li>
+                    <img src="http://placekitten.com/800/504" />
+                  </li>
+                  <li>
+                    <img src="http://placekitten.com/800/504" />
+                  </li>
+                  <li>
+                    <img src="http://placekitten.com/800/504" />
+                  </li>
+                  <li>
+                    <iframe id="player_2" width="420" height="315" src="http://www.youtube.com/embed/vPzT9G-NM5I" frameborder="0" allowfullscreen></iframe>
+                  </li>
+                </ul>
+                <a class="prev" href="#"><span>prev</span></a>
+                <a class="next" href="#"><span>next</span></a>
               </div>
             </section>
             <section>
@@ -123,10 +165,30 @@
 
   <script src="js/vendor/jquery.js"></script>
   <script src="js/foundation.min.js"></script>
+  <script src="js/vendor/jquery.carouFredSel-6.2.1-packed.js"></script>
 
   <script>
   $(document).ready(function() {
-    $(document).foundation();
+    $(document).foundation('section', {
+      callback: function(section) {
+        var pos = section.offset();
+        $("html, body").animate({ scrollTop: pos.top }, 500);
+      }
+    });
+
+    $(".slider").carouFredSel({
+        width: '100%',
+        auto: false,
+        prev: ".prev",
+        next: ".next",
+        items: 1,
+        align: 'center',
+        scroll: {
+            items: 1,
+            duration: 1000,
+            pauseOnHover: true
+        }
+    });
   });
   </script>
 </body>
