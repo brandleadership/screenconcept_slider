@@ -54,7 +54,7 @@
 			<!-- Grid Example -->
 			<div class="row">
 				<div class="large-12 columns">
-          <ul class="slider">
+          <ul id="slider1">
             <li>
               <iframe id="player_1" src="http://player.vimeo.com/video/39683393?api=1&player_id=player_1" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
               <div class='caption'>
@@ -89,8 +89,8 @@
               <iframe id="player_2" width="420" height="315" src="http://www.youtube.com/embed/vPzT9G-NM5I" frameborder="0" allowfullscreen></iframe>
             </li>
           </ul>
-          <a class="prev" href="#"><span>prev</span></a>
-          <a class="next" href="#"><span>next</span></a>
+          <a class="prev" id='prev1' href="#"><span>prev</span></a>
+          <a class="next" id='next1' href="#"><span>next</span></a>
 				</div>
 			</div>
 			<div class="row">
@@ -111,7 +111,7 @@
             <section>
               <p class="title" data-section-title><a href="#">Section 1</a></p>
               <div class="content" data-section-content>
-                <ul class="slider">
+                <ul id="slider2">
                   <li>
                     <iframe id="player_1" src="http://player.vimeo.com/video/39683393?api=1&player_id=player_1" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
                     <p class='flex-caption'>
@@ -149,8 +149,8 @@
                     </p>
                   </li>
                 </ul>
-                <a class="prev" href="#"><span>prev</span></a>
-                <a class="next" href="#"><span>next</span></a>
+                <a class="prev" id='prev2' href="#"><span>prev</span></a>
+                <a class="next" id='next2' href="#"><span>next</span></a>
               </div>
             </section>
             <section>
@@ -209,11 +209,25 @@
       }
     });
 
-    $(".slider").carouFredSel({
+    $("#slider1").carouFredSel({
         width: '100%',
         auto: false,
-        prev: ".prev",
-        next: ".next",
+        prev: "#prev1",
+        next: "#next1",
+        items: 1,
+        align: 'center',
+        scroll: {
+            items: 1,
+            duration: 1000,
+            pauseOnHover: true
+        }
+    });
+
+    $("#slider2").carouFredSel({
+        width: '100%',
+        auto: false,
+        prev: "#prev2",
+        next: "#next2",
         items: 1,
         align: 'center',
         scroll: {
