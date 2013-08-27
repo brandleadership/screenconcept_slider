@@ -9,6 +9,7 @@
 
 
   <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="css/cycle.css">
 
 
   <script src="js/vendor/custom.modernizr.js"></script>
@@ -54,9 +55,29 @@
 			<!-- Grid Example -->
 			<div class="row">
 				<div class="large-12 columns">
-					VIDEO TEST HERE
+					<div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-timeout="0" data-cycle-prev=".prevControl" data-cycle-next=".nextControl" data-cycle-swipe="true" data-cycle-auto-height="637:471" data-cycle-slides=">div" data-cycle-youtube="true" data-cycle-youtube-autostart="false">
+            <div><img src="http://placekitten.com/637/471" /></div>
+            <div class="flex-video">
+              <iframe width="1280" height="720" src="http://www.youtube.com/embed/AbF6ZZqVMyk" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div><img src="http://placekitten.com/637/471" /></div>
+            <div class="flex-video">
+              <iframe src="http://player.vimeo.com/video/53673455?title=0&amp;byline=0&amp;portrait=0" width="1280" height="719" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            </div>
+            <div><img src="http://placekitten.com/637/471"></div>
+          </div>
 				</div>
 			</div>
+      <div class="row">
+        <div class="large-12 columns">
+          <div class=center>
+            <span class="prevControl">Prev</span>
+            <span class="">|</span>
+            <span class="nextControl">Next</span>
+          </div>
+        </div>
+      </div>
+
 			<div class="row">
 				<div class="large-6 columns">
 					<div class="panel">
@@ -75,7 +96,22 @@
             <section>
               <p class="title" data-section-title><a href="#">Section 1</a></p>
               <div class="content" data-section-content>
-                VIDEO TEST HERE
+                <div class="cycle-slideshow" data-cycle-fx="scrollHorz" data-cycle-prev=".prevControl1" data-cycle-next=".nextControl1" data-cycle-timeout="0" data-cycle-swipe="true" data-cycle-auto-height="637:471" data-cycle-slides=">div" data-cycle-youtube="true" data-cycle-youtube-autostart="false">
+                  <div><img src="http://placekitten.com/637/471" /></div>
+                  <div class="flex-video">
+                    <iframe width="1280" height="720" src="http://www.youtube.com/embed/AbF6ZZqVMyk" frameborder="0" allowfullscreen></iframe>
+                  </div>
+                  <div><img src="http://placekitten.com/637/471" /></div>
+                  <div class="flex-video">
+                    <iframe src="http://player.vimeo.com/video/53673455?title=0&amp;byline=0&amp;portrait=0" width="1280" height="719" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                  </div>
+                  <div><img src="http://placekitten.com/637/471"></div>
+                </div>
+                <div class=center>
+                  <span class="prevControl1">Prev</span>
+                  <span class="">|</span>
+                  <span class="nextControl1">Next</span>
+                </div>
               </div>
             </section>
             <section>
@@ -123,6 +159,9 @@
 
   <script src="js/vendor/jquery.js"></script>
   <script src="js/foundation.min.js"></script>
+  <script src="js/vendor/cycle2.js"></script>
+  <script src="js/vendor/cycle2.swipe.js"></script>
+  <script src="js/vendor/cycle2.youtube.js"></script>
 
   <script>
   $(document).ready(function() {
